@@ -21,7 +21,7 @@ func main(){
   fmt.Println("opuu! (OnTake Power User Utilities)");
   fmt.Printf("Build Date: %s\n",BuildDate)
   fmt.Printf("Commit: %s\n",GitHash)
-  fmt.Printf("Build %s\n",BuildNumber)
+  fmt.Printf("Build: %s\n",BuildNumber)
   fmt.Printf("\n")
 
   command := flag.String("c", "null", "command")
