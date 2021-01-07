@@ -5,5 +5,5 @@ A very WIP swiss army knife utility.
 
 - [x] HTTP server
 - [ ] Batch image convertion
-- [ ] Power Rename (Regular Expression Rename)
+- [ ] Batch Rename (Regular Expression Rename)
 - [ ] More...
