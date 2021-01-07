@@ -6,7 +6,9 @@ import (
 "flag"
 )
 
-var GitCommit string
+var BuildNumber string
+var BuildDate string
+var GitHash string
 
 func oops(){
   fmt.Println("usage: opuu <arguments>")
@@ -17,7 +19,10 @@ func oops(){
 
 func main(){
   fmt.Println("opuu! (OnTake Power User Utilities)");
-  fmt.Printf("Version: %s\n",GitCommit)
+  fmt.Printf("Build Date: %s\n",BuildDate)
+  fmt.Printf("Commit: %s\n",GitHash)
+  fmt.Printf("Build %s\n",BuildNumber)
+  fmt.Printf("\n")
 
   command := flag.String("c", "null", "command")
   port := flag.String("p", "8080", "port to serve on")
