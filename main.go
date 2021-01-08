@@ -10,10 +10,14 @@ var BuildNumber string
 var BuildDate string
 var GitHash string
 
+func fatal(){
+  os.Exit(1)
+}
+
 func oops(){
   fmt.Println("usage: opuu <arguments>")
   fmt.Println("'opuu -c help' for help")
-  os.Exit(1)
+  fatal()
 }
 
 
@@ -26,11 +30,15 @@ func main(){
 
   command := flag.String("c", "null", "command")
   port := flag.String("p", "8080", "port to serve on")
-  directory := flag.String("d", ".", "the directory of static file to host")
+  directory := flag.String("d", ".", "directory")
+  match := flag.String("m", "null", "match with")
+  replace := flag.String("r", "null", "replace with")
   flag.Parse()
   if (*command=="http-server"){
       httpserver(port,directory)
-  } else{
+  } else if (*command=="power-rename"){
+      powerrename(directory,match,replace)
+  }else {
     oops();
   }
 }
